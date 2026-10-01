@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background-color: #f4f1eb; color: #2f2b27; line-height: 1.6; }
+.site-header { background-color: #352e1f; color: #ffffff; padding: 45px 30px; }
+.header-content { max-width: 900px; margin: 0 auto; min-height: 145px; }
+.profile-photo { float: left; width: 145px; height: 145px; border: 5px solid #ccb693; border-radius: 50%; object-fit: cover; margin-right: 30px; }
+.header-content::after { content: ""; display: block; clear: both; }
+.intro { padding-top: 20px; }
+.intro h1 { margin: 5px 0; font-family: Georgia, "Times New Roman", serif; font-size: 42px; letter-spacing: 1px; }
+.eyebrow { margin: 0; color: #ccb693; font-size: 13px; font-weight: 700; letter-spacing: 2px; }
+.tagline { margin: 8px 0; font-size: 18px; }
+.location { margin: 0; color: #ccb693; }
+.navigation { background-color: #5e3d20; padding: 14px 20px; text-align: center; }
+.navigation a { display: inline-block; color: #ffffff; text-decoration: none; font-weight: 700; margin: 0 14px; }
+.navigation a:hover { text-decoration: underline; }
+main { max-width: 900px; margin: 35px auto; padding: 0 20px; }
+.section-card { background-color: #ffffff; border: 1px solid #d8cfc1; border-radius: 8px; padding: 28px; margin-bottom: 24px; }
+h2 { margin-top: 0; padding-bottom: 10px; border-bottom: 2px solid #ccb693; color: #352e1f; font-family: Georgia, "Times New Roman", serif; font-size: 27px; }
+h3 { color: #5e3d20; margin-bottom: 5px; }
+.education-item, .project { padding: 12px 0; border-bottom: 1px solid #e5ded4; }
+.education-item:last-child, .project:last-child { border-bottom: none; }
+.education-item p, .project p { margin: 5px 0; }
+.muted { color: #787350; font-weight: 700; }
+.skills-list { list-style: none; padding: 0; margin: 15px 0 25px; }
+.skills-list::after { content: ""; display: block; clear: both; }
+.skills-list li { float: left; background-color: #ccb693; color: #352e1f; padding: 8px 14px; margin: 0 10px 10px 0; border-radius: 5px; font-weight: 700; }
+.language-list { padding-left: 22px; clear: both; }
+a { color: #5e3d20; }
+address { font-style: normal; }
+address p { margin: 10px 0; }
+footer { text-align: center; background-color: #352e1f; color: #ccb693; padding: 20px; margin-top: 40px; }
+footer p { margin: 0; }
