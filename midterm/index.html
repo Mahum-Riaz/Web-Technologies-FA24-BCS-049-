@@ -77,6 +77,13 @@
         <label class="filter-label" for="filter-cheeks">Cheeks</label>
       </div>
 
+      <!-- Task 3: live search and price sort (script.js). -->
+      <div class="tools-bar">
+        <input type="search" id="search-box" class="search-box" placeholder="Search products by name…" aria-label="Search products by name">
+        <button type="button" id="sort-btn" class="btn-sort">Sort by price</button>
+      </div>
+      <p id="no-results" class="no-results" hidden>No products found</p>
+
       <div class="row g-4 product-grid">
           <div class="col-12 col-sm-6 col-lg-3 product-col category-face">
             <article class="product-card">
@@ -133,7 +140,7 @@
               </a>
               <div class="product-info">
                 <h2><a href="product.html">Product 5</a></h2>
-                <p class="product-price">Rs. 2,799</p>
+                <p class="product-price">Rs. 5,499</p>
                 <a class="btn btn-brown" href="product.html">View Product</a>
               </div>
             </article>
@@ -216,5 +223,6 @@
       <p class="copyright">© 2026 The Brown Vanity. All rights reserved.</p>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
