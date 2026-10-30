@@ -239,8 +239,7 @@ a { color: inherit; }
   margin: 0 0 24px;
 }
 
-/* Keep the radio inputs available to the keyboard and screen readers,
-   while showing their labels as the visible filter buttons. */
+/* Keep radio inputs available to keyboard users and assistive technology. */
 .filter-radio {
   position: absolute;
   width: 1px;
@@ -265,7 +264,7 @@ a { color: inherit; }
   transition: background .18s ease, color .18s ease, border-color .18s ease;
 }
 
-/* The adjacent-sibling selector styles the label belonging to the checked radio. */
+/* Style the label immediately following the selected radio button. */
 .filter-radio:checked + .filter-label {
   border-color: hsl(343, 70%, 45%);
   background: hsl(343, 70%, 45%);
@@ -277,8 +276,7 @@ a { color: inherit; }
   outline-offset: 3px;
 }
 
-/* :has() checks which radio is selected inside this shop section.
-   Products outside that category are hidden as complete Bootstrap columns. */
+/* :has() detects the selected category and hides other complete product columns. */
 .shop-section:has(#filter-face:checked) .product-grid .product-col:not(.category-face),
 .shop-section:has(#filter-eyes:checked) .product-grid .product-col:not(.category-eyes),
 .shop-section:has(#filter-lips:checked) .product-grid .product-col:not(.category-lips),
@@ -297,3 +295,87 @@ a { color: inherit; }
   }
 }
 
+
+/* TASK 2 — Product page CSS Grid layout with named grid areas. */
+.product-layout {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "details"
+    "description";
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.product-image-area {
+  grid-area: image;
+  min-width: 0;
+}
+
+.product-details-area {
+  grid-area: details;
+  min-width: 0;
+}
+
+.product-description-area {
+  grid-area: description;
+  min-width: 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.product-description-area h2 {
+  margin: 0 0 16px;
+  color: var(--pine-bark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+}
+
+.product-description-area .detail-description {
+  max-width: 900px;
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+/* At 649px and wider, place image and details side by side.
+   The description spans both columns on the next row. */
+@media (min-width: 649px) {
+  .product-layout {
+    grid-template-areas:
+      "image details"
+      "description description";
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 36px;
+    row-gap: 42px;
+  }
+
+  /* Keep the details visible while the user scrolls through the page. */
+  .product-details-area {
+    position: sticky;
+    top: 79px;
+    align-self: start;
+    background: var(--paper);
+    z-index: 5;
+    padding: 20px;
+}
+}
+
+/* Below 649px, the named areas stack in the required order.
+   Sticky positioning is disabled on the narrow layout. */
+@media (max-width: 648.98px) {
+  .product-layout {
+    grid-template-areas:
+      "image"
+      "details"
+      "description";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .product-details-area {
+    position: static;
+  }
+}

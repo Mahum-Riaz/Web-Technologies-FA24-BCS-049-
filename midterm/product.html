@@ -39,20 +39,20 @@
 
   <main class="container site-container product-detail-page">
     <p class="breadcrumb"><a href="index.html">Shop</a> / Product 1</p>
-    <section class="row g-5 align-items-start product-detail" aria-labelledby="product-title">
-      <div class="col-12 col-md-6">
+
+    <!-- Task 2: CSS Grid layout with named areas for image, details and description. -->
+    <section class="product-layout" aria-labelledby="product-title">
+
+      <div class="product-image-area">
         <div class="detail-image-wrap">
           <img src="images/picture1.jpg" alt="Product 1" class="detail-image">
         </div>
       </div>
-      <div class="col-12 col-md-6 detail-copy">
+
+      <div class="product-details-area detail-copy">
         <p class="eyebrow">THE BEAUTY EDIT</p>
         <h1 id="product-title">Product 1</h1>
         <p class="detail-price">Rs. 2,499</p>
-        <p class="detail-description">
-          A carefully chosen beauty essential for your everyday routine. Replace this
-          placeholder description with the real product details when you add your images.
-        </p>
 
         <form class="quantity-form" action="#" method="get">
           <label for="quantity">Quantity</label>
@@ -64,9 +64,35 @@
         </form>
 
         <button class="btn btn-brown btn-add-detail" type="button">Add to Cart</button>
-        <p class="static-note">Demo page: the cart button is intentionally non-functional for Assignment 2.</p>
+        <p class="static-note">Demo page: the cart button is intentionally non-functional for this exam.</p>
         <p class="delivery-inline">Complimentary delivery on orders over Rs. 2,999.</p>
       </div>
+
+      <div class="product-description-area">
+        <h2>Product Description</h2>
+        <p class="detail-description">
+          A carefully chosen beauty essential for your everyday routine. This piece has been
+          selected for The Brown Vanity edit because it brings together thoughtful design,
+          everyday usefulness and a touch of understated luxury.
+        </p>
+        <p class="detail-description">
+          Whether you are getting ready for a busy day or creating a more considered evening
+          look, this beauty essential is designed to fit naturally into your routine. Its
+          versatile character makes it an easy addition to a carefully curated collection.
+        </p>
+        <p class="detail-description">
+          At The Brown Vanity, we believe that the little details matter. We focus on products
+          that feel special without being excessive, and that make everyday beauty routines
+          feel a little more beautiful. This product reflects that approach through its
+          carefully selected place in our collection.
+        </p>
+        <p class="detail-description">
+          Please refer to the product packaging for the manufacturer's complete ingredients,
+          usage instructions and any product-specific precautions. Product appearance may
+          vary slightly depending on screen settings and lighting.
+        </p>
+      </div>
+
     </section>
   </main>
 
