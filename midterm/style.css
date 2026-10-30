@@ -229,3 +229,71 @@ a { color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
+
+/* TASK 1 — CSS-only category filter */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 24px;
+}
+
+/* Keep the radio inputs available to the keyboard and screen readers,
+   while showing their labels as the visible filter buttons. */
+.filter-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.filter-label {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 17px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--soft-leather);
+  font-size: .78rem;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+
+/* The adjacent-sibling selector styles the label belonging to the checked radio. */
+.filter-radio:checked + .filter-label {
+  border-color: hsl(343, 70%, 45%);
+  background: hsl(343, 70%, 45%);
+  color: #FFFFFF;
+}
+
+.filter-radio:focus-visible + .filter-label {
+  outline: 2px solid var(--pine-bark);
+  outline-offset: 3px;
+}
+
+/* :has() checks which radio is selected inside this shop section.
+   Products outside that category are hidden as complete Bootstrap columns. */
+.shop-section:has(#filter-face:checked) .product-grid .product-col:not(.category-face),
+.shop-section:has(#filter-eyes:checked) .product-grid .product-col:not(.category-eyes),
+.shop-section:has(#filter-lips:checked) .product-grid .product-col:not(.category-lips),
+.shop-section:has(#filter-cheeks:checked) .product-grid .product-col:not(.category-cheeks) {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .category-filter {
+    gap: 7px;
+  }
+
+  .filter-label {
+    padding: 7px 12px;
+    font-size: .74rem;
+  }
+}
+
