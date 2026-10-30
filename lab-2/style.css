@@ -1,0 +1,317 @@
+/* ------------------------------
+   Base styles
+--------------------------------- */
+:root {
+    --ink: #30271f;
+    --muted: #76695d;
+    --paper: #f5f1e9;
+    --white: #fffdfa;
+    --accent: #81563b;
+    --line: #e4dbcf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------------------------
+   Responsive navbar
+   Bootstrap navbar-expand-md
+   expands at 768px
+--------------------------------- */
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav-layout {
+    min-height: 78px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.brand-name {
+    justify-self: start;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.45rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.brand-name span {
+    color: var(--accent);
+}
+
+.nav-links-wrap {
+    justify-self: center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-links .nav-link {
+    color: var(--ink);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
+    color: var(--accent);
+}
+
+.cart-link {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.cart-link:hover {
+    color: var(--accent);
+}
+
+.navbar-toggler {
+    border-color: var(--line);
+}
+
+/* ------------------------------
+   Intro section
+--------------------------------- */
+.intro {
+    text-align: center;
+    padding: 65px 20px 55px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.intro h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-bottom: 12px;
+}
+
+.intro-text {
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ------------------------------
+   Product grid
+   Desktop: 4 columns
+   Tablet: 2 columns
+   Phone: 1 column
+--------------------------------- */
+.products-section {
+    width: min(1400px, 90%);
+    margin: 0 auto 75px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.section-heading .eyebrow {
+    margin-bottom: 5px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.product-count {
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding-bottom: 5px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.product-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    min-width: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(48, 39, 31, 0.08);
+}
+
+.product-visual {
+    min-height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(48, 39, 31, 0.65);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.8rem;
+}
+
+.visual-one { background: linear-gradient(135deg, #dfc9b1, #a98568); }
+.visual-two { background: linear-gradient(135deg, #d9e0d5, #879b88); }
+.visual-three { background: linear-gradient(135deg, #ead7d2, #bd8f86); }
+.visual-four { background: linear-gradient(135deg, #e9dfc5, #b9a477); }
+.visual-five { background: linear-gradient(135deg, #d7c7bd, #90776b); }
+.visual-six { background: linear-gradient(135deg, #d7dce2, #8d9aa9); }
+.visual-seven { background: linear-gradient(135deg, #e5d8b9, #b69b69); }
+.visual-eight { background: linear-gradient(135deg, #d8d0c4, #928475); }
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-button {
+    display: block;
+    width: 100%;
+    background: var(--ink);
+    color: white;
+    border-radius: 0;
+    padding: 11px;
+}
+
+.product-button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* ------------------------------
+   Footer
+--------------------------------- */
+footer {
+    background: var(--ink);
+    color: #f5f1e9;
+    text-align: center;
+    padding: 24px 15px;
+    font-size: 0.85rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-layout {
+        padding: 0 3%;
+    }
+}
+
+/* Phone: 1 column and collapsed navbar */
+@media (max-width: 767.98px) {
+    .nav-layout {
+        min-height: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 5%;
+    }
+
+    .brand-name {
+        font-size: 1.2rem;
+        margin-right: auto;
+    }
+
+    .navbar-toggler {
+        order: 2;
+        margin-left: 12px;
+    }
+
+    .cart-link {
+        order: 1;
+        margin-left: auto;
+    }
+
+    .nav-links-wrap {
+        order: 3;
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .nav-links {
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 0 5px;
+    }
+
+    .nav-links .nav-link {
+        padding: 10px 4px;
+        border-top: 1px solid var(--line);
+    }
+
+    .intro {
+        padding: 45px 18px 38px;
+    }
+
+    .products-section {
+        width: 90%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-visual {
+        min-height: 250px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+}
